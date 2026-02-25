@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: 222.2 47.4% 11.2%; /* HSL (dark blue shade) */
 }
 
 @theme inline {
@@ -16,11 +17,20 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: 222.2 47.4% 11.2%; /* HSL (dark blue shade) */
   }
 }
 
+/* Tailwind utility classes for primary color */
+.bg-primary {
+  background-color: hsl(var(--primary));
+}
+.text-primary {
+  color: hsl(var(--primary));
+}
+
 body {
-  background: var(--background);
+  background: #0a1033;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
