@@ -6,7 +6,6 @@ import Projects from "./components/sections/Projects";
 import LeetCode from "./components/sections/LeetCode";
 import Achievements from "./components/sections/Achievements";
 import Contact from "./components/sections/Contact";
-import Collaboration from "./components/sections/Collaboration";
 
 export default function HomePage() {
   return (
@@ -20,7 +19,6 @@ export default function HomePage() {
       <Projects />
       <LeetCode />
       <Achievements />
-      <Collaboration />
       <Contact />
     </>
   );

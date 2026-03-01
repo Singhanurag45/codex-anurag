@@ -23,7 +23,9 @@ import {
   SiCplusplus,
   SiNextdotjs,
   SiPostgresql,
-  SiRender
+  SiRender,
+  SiDocker, 
+  SiLinux,
 } from "react-icons/si";
 import { IconType } from "react-icons";
 
@@ -74,7 +76,6 @@ export const navLinks = [
   { id: "projects", title: "Projects" },
   { id: "leetcode", title: "LeetCode" },
   { id: "achievements", title: "Achievements" },
-  { id: "collaboration", title: "Collaboration" },
   { id: "contact", title: "Contact" },
 ];
 
@@ -134,7 +135,6 @@ export const skills: SkillCategory[] = [
       { name: "MongoDB", icon: SiMongodb },
       { name: "MySQL", icon: SiMysql },
       { name: "PostgreSQL", icon: SiPostgresql },
-      
     ],
   },
   {
@@ -146,13 +146,15 @@ export const skills: SkillCategory[] = [
     ],
   },
   {
-    title: "Tools",
+    title: "Tools and DevOps",
     technologies: [
       { name: "Git & GitHub", icon: FaGitAlt },
       { name: "Postman", icon: SiPostman },
       { name: "Vercel", icon: SiVercel },
       { name: "Next.js", icon: SiNextdotjs },
       { name: "Render", icon: SiRender },
+      { name: "Docker", icon: SiDocker },
+      { name: "Linux", icon: SiLinux },
     ],
   },
 ];
