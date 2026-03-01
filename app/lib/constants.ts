@@ -209,8 +209,7 @@ export const projects: ProjectType[] = [
       { name: "javascript", color: "text-yellow-500" },
     ],
     image: project1Image,
-    source_code_link:
-      "https://github.com/Singhanurag45/MegaMart_Ecommerce_Website",
+    source_code_link: "https://github.com/Singhanurag45/MegaMart",
   },
 ];
 
