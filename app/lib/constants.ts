@@ -100,17 +100,7 @@ export const aboutSection = {
     institution: "Maharaja Agrasen Institute of Technology, Delhi",
     degree: "B.Tech in Computer Science",
     gpa: "CGPA: 7.8",
-    years: "2023–2026",
-    coursework: [
-      "Data Structures and Algorithms",
-      "Operating Systems",
-      "Database Management Systems",
-      "Computer Networks",
-      "Object-Oriented Programming",
-      "Software Engineering",
-      "Artificial Intelligence",
-      "Machine Learning",
-    ],
+    years: "2023–2026"
   },
 };
 
