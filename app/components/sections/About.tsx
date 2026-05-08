@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image"; // Import Next.js Image component
 import { GraduationCap, Trophy, Target, BookOpen } from "lucide-react";
+import type { LucideProps } from "lucide-react";
 
 const ParallaxAbout = () => {
   return (
@@ -110,6 +111,6 @@ const ParallaxAbout = () => {
   );
 };
 
-const Code2 = (props: any) => <BookOpen {...props} />;
+const Code2 = (props: LucideProps) => <BookOpen {...props} />;
 
 export default ParallaxAbout;

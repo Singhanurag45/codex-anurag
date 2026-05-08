@@ -44,7 +44,7 @@ export default function Contact() {
       setLoading(false);
       alert("Message sent successfully!");
       setForm({ name: "", email: "", message: "" });
-    } catch (error) {
+    } catch {
       setLoading(false);
       alert("Something went wrong. Please try again.");
     }
@@ -65,11 +65,11 @@ export default function Contact() {
           >
             <div>
               <h2 className="text-5xl font-extrabold tracking-tight mb-4">
-                Let's work <span className="text-[#a285fd]">together.</span>
+                Let&apos;s work <span className="text-[#a285fd]">together.</span>
               </h2>
               <p className="text-gray-400 text-lg">
                 Have a specific inquiry or just want to say hi? Fill out the
-                form and I'll get back to you within 24 hours.
+                form and I&apos;ll get back to you within 24 hours.
               </p>
             </div>
 

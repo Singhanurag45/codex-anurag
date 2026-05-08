@@ -34,3 +34,31 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero-scan-line {
+  animation: hero-scan 4s linear infinite;
+}
+
+.hero-float {
+  animation: hero-float 4s ease-in-out infinite;
+}
+
+@keyframes hero-scan {
+  0%,
+  100% {
+    top: 0%;
+  }
+  50% {
+    top: 100%;
+  }
+}
+
+@keyframes hero-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

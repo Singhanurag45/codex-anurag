@@ -1,9 +1,3 @@
-"use client";
-
-import React from "react";
-import { motion } from "framer-motion";
-import Image from "next/image";
-
 const socialLinks = [
   {
     name: "GitHub",
@@ -30,17 +24,8 @@ const footerLinks = [
 ];
 
 export default function Footer() {
-  const handleScrollToTop = () => {
-    if (typeof window !== "undefined")
-      window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
-    <motion.footer
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      className="py-12 bg-[#050816] border-t border-white/5"
-    >
+    <footer className="py-12 bg-[#050816] border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6 sm:px-16">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
           <div className="max-w-xs">
@@ -81,13 +66,15 @@ export default function Footer() {
                     key={social.name}
                     href={social.link}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 rounded-xl bg-[#10153e] border border-white/10 flex items-center justify-center hover:border-[#a285fd]/50 hover:bg-[#a285fd]/10 transition-all duration-300 group"
                   >
-                    <Image
+                    <img
                       src={social.icon}
                       alt={social.name}
-                      width={20}
-                      height={20}
+                      width="20"
+                      height="20"
+                      loading="lazy"
                       className="opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all"
                     />
                   </a>
@@ -99,29 +86,29 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
           <p className="text-gray-600 text-xs font-medium">
-            © {new Date().getFullYear()} Anurag Singh. Built with Next.js &
-            Framer Motion.
+            © {new Date().getFullYear()} Anurag Singh. Built with Next.js.
           </p>
 
-          <button
-            onClick={handleScrollToTop}
+          <a
+            href="#"
             className="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
           >
             <span className="text-xs font-bold uppercase tracking-widest">
               Back to top
             </span>
             <div className="bg-[#10153e] p-2 rounded-lg border border-white/10 group-hover:border-[#a285fd] transition-colors">
-              <Image
+              <img
                 src="/assets/up-arrow.png"
-                alt="Top"
-                width={14}
-                height={14}
+                alt=""
+                width="14"
+                height="14"
+                loading="lazy"
                 className="invert group-hover:translate-y-0.5 transition-transform"
               />
             </div>
-          </button>
+          </a>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

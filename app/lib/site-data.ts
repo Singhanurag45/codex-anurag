@@ -1,36 +1,3 @@
-// my-app/lib/constants.ts
-
-// ================== Image consts (=/public/assets/) ==================
-import { createElement } from "react";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaGitAlt,
-  FaJava,
-} from "react-icons/fa";
-
-import {
-  SiTailwindcss,
-  SiExpress,
-  SiMongodb,
-  SiMysql,
-  SiTypescript,
-  SiVercel,
-  SiPostman,
-  SiPython,
-  SiCplusplus,
-  SiNextdotjs,
-  SiPostgresql,
-  SiRender,
-  SiDocker,
-  SiLinux,
-  SiSpringboot,
-} from "react-icons/si";
-import { IconType } from "react-icons";
-
 const project1Image = "/assets/optimized/megamart.webp";
 const project2Image = "/assets/optimized/MomentShare.webp";
 const project3Image = "/assets/optimized/urbanstay.webp";
@@ -38,53 +5,12 @@ const project4Image = "/assets/optimized/civic_resolve.webp";
 
 const profilePic = "/assets/optimized/anurag-prof.webp";
 
-const PlaywrightIcon: IconType = ({ className, title, ...props }) =>
-  createElement("img", {
-    ...props,
-    src: "/assets/playwright.svg",
-    alt: title ?? "Playwright",
-    className,
-    style: {
-      display: "inline-block",
-      width: "1em",
-      height: "1em",
-      objectFit: "contain",
-      ...props.style,
-    },
-  });
-
-// Leetcode
 const leetCodeProfilePic = "/assets/optimized/leetcode-profile.webp";
 const badge100 = "/assets/optimized/2025-100-days.webp";
 const badgeAnnual = "/assets/optimized/2025-50-days.webp";
 const badgeAnother = "/assets/optimized/2024-100-days.webp";
 const badgeFourth = "/assets/optimized/2024-50-days.webp";
 
-// ================== Types ==================
-
-export interface TagType {
-  name: string;
-  color: string;
-}
-
-export interface ProjectType {
-  name: string;
-  description: string;
-  tags: TagType[];
-  image: string;
-  source_code_link: string;
-}
-export interface Technology {
-  name: string;
-  icon: IconType;
-}
-
-export interface SkillCategory {
-  title: string;
-  technologies: Technology[];
-}
-
-// ================== Nav Links ==================
 export const navLinks = [
   { id: "about", title: "About" },
   { id: "skills", title: "Skills" },
@@ -93,8 +19,6 @@ export const navLinks = [
   { id: "achievements", title: "Achievements" },
   { id: "contact", title: "Contact" },
 ];
-
-// ================== Hero Section ==================
 
 export const hero = {
   name: "Anurag Singh",
@@ -105,69 +29,7 @@ export const hero = {
   resumeLink: "/Anuragsingh_Resume (1).pdf",
 };
 
-// ================== About Section ==================
-export const aboutSection = {
-  introduction: "Introduction",
-  overview: "Overview.",
-  text: "A MERN Stack Developer and Computer Science student at MAIT with expertise in React, Node.js, and MongoDB, complemented by a strong foundation in DSA.",
-
-  education: {
-    institution: "Maharaja Agrasen Institute of Technology, Delhi",
-    degree: "B.Tech in Computer Science",
-    gpa: "CGPA: 7.8",
-    years: "2023-2026"
-  },
-};
-
-// ================== Technical Skills ==================
-export const skills: SkillCategory[] = [
-  {
-    title: "Frontend Technologies",
-    technologies: [
-      { name: "HTML", icon: FaHtml5 },
-      { name: "CSS", icon: FaCss3Alt },
-      { name: "JavaScript", icon: FaJs },
-      { name: "TypeScript", icon: SiTypescript },
-      { name: "React", icon: FaReact },
-      { name: "Tailwind CSS", icon: SiTailwindcss },
-    ],
-  },
-  {
-    title: "Backend Technologies & Databases",
-    technologies: [
-      { name: "Node.js", icon: FaNodeJs },
-      { name: "Express.js", icon: SiExpress },
-      { name: "MongoDB", icon: SiMongodb },
-      { name: "MySQL", icon: SiMysql },
-      { name: "PostgreSQL", icon: SiPostgresql },
-      { name: "Spring Boot", icon: SiSpringboot },
-    ],
-  },
-  {
-    title: "Programming Languages",
-    technologies: [
-      { name: "C++", icon: SiCplusplus },
-      { name: "Python", icon: SiPython },
-      { name: "Java", icon: FaJava },
-    ],
-  },
-  {
-    title: "Tools and DevOps",
-    technologies: [
-      { name: "Git & GitHub", icon: FaGitAlt },
-      { name: "Postman", icon: SiPostman },
-      { name: "Vercel", icon: SiVercel },
-      { name: "Next.js", icon: SiNextdotjs },
-      { name: "Render", icon: SiRender },
-      { name: "Docker", icon: SiDocker },
-      { name: "Linux", icon: SiLinux },
-      { name: "Playwright", icon: PlaywrightIcon },
-    ],
-  },
-];
-// ================== Projects ==================
-
-export const projects: ProjectType[] = [
+export const projects = [
   {
     name: "UrbanStay - Hotel booking system",
     description:
@@ -230,8 +92,6 @@ export const projects: ProjectType[] = [
   },
 ];
 
-// ================== LeetCode Stats ==================
-
 export const leetCodeStats = {
   profilePic: leetCodeProfilePic,
   username: "Anurag Singh",
@@ -258,17 +118,17 @@ export const leetCodeStats = {
   maxStreak: 33,
 };
 
-// ================== Achievements ==================
-
 export const achievements = [
   {
     title: "Solved 500+ Data Structures & Algorithms Problems",
-    description: "Solved 400 problems on LeetCode and 100+ problems on GeeksforGeeks.",
+    description:
+      "Solved 400 problems on LeetCode and 100+ problems on GeeksforGeeks.",
     link: "https://leetcode.com/Anuragsingh_123/",
   },
   {
     title: "Finalist - BUILD WARS Hackathon",
-    description: "Collaborated in a team of 4 to build an innovative project under time constraints.",
+    description:
+      "Collaborated in a team of 4 to build an innovative project under time constraints.",
     link: "https://drive.google.com/file/d/1GCrv4DYGOFj0xgO8nqBbWuGGWJxf-NEI/view",
   },
   {
@@ -278,7 +138,8 @@ export const achievements = [
   },
   {
     title: "Full-Stack Web Development Course - Udemy",
-    description: "Completed a comprehensive full-stack web development course by Hitesh Choudhary.",
+    description:
+      "Completed a comprehensive full-stack web development course by Hitesh Choudhary.",
     link: "https://www.udemy.com/certificate/UC-4725a447-f532-4b01-92ac-bfe165521573/",
   },
   {

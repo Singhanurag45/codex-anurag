@@ -3,9 +3,10 @@
 import { Suspense, useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload } from "@react-three/drei";
+import type { Mesh } from "three";
 
 const PlaceholderModel = () => {
-  const meshRef = useRef<any>(null);
+  const meshRef = useRef<Mesh>(null);
 
   useFrame((state, delta) => {
     if (meshRef.current) {

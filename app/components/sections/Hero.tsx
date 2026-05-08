@@ -1,24 +1,10 @@
-"use client";
-
 import React from "react";
-import { motion } from "framer-motion";
-import { hero } from "../../lib/constants";
-
-import Image from "next/image";
-import {
-  Terminal,
-  Code2,
-  Sparkles,
-  Download,
-  Cpu,
-  Box,
-  Layout,
-} from "lucide-react";
+import { Box, Code2, Cpu, Download, Layout } from "lucide-react";
+import { hero } from "../../lib/site-data";
 
 export default function CyberHero() {
   return (
     <section className="relative w-full min-h-screen flex items-center bg-[#050816] overflow-hidden py-20">
-      {/* Background Tech Grid */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
@@ -28,13 +14,7 @@ export default function CyberHero() {
       />
 
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
-        {/* Left: Content (8 Columns) */}
-        <motion.div
-          className="lg:col-span-8"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <div className="lg:col-span-8">
           <div className="flex items-center gap-3 text-[#a285fd] mb-6">
             <Cpu size={18} className="animate-pulse" />
             <span className="text-xs font-mono tracking-[0.4em] uppercase text-gray-400">
@@ -79,56 +59,29 @@ export default function CyberHero() {
               Get Resume <Download size={18} />
             </a>
           </div>
-        </motion.div>
+        </div>
 
-        {/* Right: Scaled-Down Profile (4 Columns) */}
-        <motion.div
-          className="lg:col-span-4 relative flex justify-center lg:justify-end"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
+        <div className="lg:col-span-4 relative flex justify-center lg:justify-end">
           <div className="relative w-full max-w-[340px] group">
-            {/* Background Glow */}
             <div className="absolute inset-0 bg-linear-to-tr from-[#a285fd] to-blue-500 rounded-[2.5rem] blur-[80px] opacity-10 group-hover:opacity-25 transition-opacity duration-700" />
 
-            {/* Profile Frame */}
-            {/* Profile Frame */}
             <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#10153e]/40 p-2 backdrop-blur-3xl shadow-2xl group">
-              {/* Add a corner accent for a technical HUD look */}
               <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-[#a285fd]/30 rounded-tr-[2.5rem] pointer-events-none z-20" />
 
               <div className="relative rounded-4xl overflow-hidden aspect-4/5 bg-[#050816]">
-                {/* Tech Scanning Animation Line */}
-                <motion.div
-                  animate={{ top: ["0%", "100%", "0%"] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                  className="absolute left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#a285fd] to-transparent z-10 opacity-40"
-                />
+                <div className="hero-scan-line absolute left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#a285fd] to-transparent z-10 opacity-40" />
 
-                <Image
-                  src="/assets/anurag-prof.png"
+                <img
+                  src={hero.profilePic}
                   alt="Anurag Singh"
-                  fill
-                  priority // Fixes LCP (Largest Contentful Paint) for Hero images
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // FIXES THE CONSOLE WARNING
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
+                  className="absolute inset-0 h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
+                  fetchPriority="high"
                 />
 
-                {/* Subtle Vignette for depth */}
                 <div className="absolute inset-0 bg-linear-to-t from-[#050816]/60 to-transparent pointer-events-none" />
               </div>
 
-              {/* Enhanced Achievement Badge */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute -right-4 top-10 bg-white p-4 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] border border-gray-100"
-              >
+              <div className="hero-float absolute -right-4 top-10 bg-white p-4 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] border border-gray-100">
                 <div className="flex flex-col items-center">
                   <span className="text-black font-black text-2xl leading-none">
                     500+
@@ -137,9 +90,8 @@ export default function CyberHero() {
                     DSA Solved
                   </span>
                 </div>
-              </motion.div>
+              </div>
 
-              {/* Floating Tech Chips */}
               <div className="absolute bottom-6 left-6 flex flex-col gap-2">
                 <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
                   <Layout size={12} className="text-[#a285fd]" />
@@ -156,7 +108,7 @@ export default function CyberHero() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

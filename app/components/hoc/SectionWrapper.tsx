@@ -1,5 +1,6 @@
 "use client";
 
+import type { ComponentType } from "react";
 import { motion } from "framer-motion";
 
 const staggerContainer = (staggerChildren?: number, delayChildren?: number) => {
@@ -14,7 +15,7 @@ const staggerContainer = (staggerChildren?: number, delayChildren?: number) => {
   };
 };
 
-const SectionWrapper = (Component: any, idName: string) =>
+const SectionWrapper = (Component: ComponentType, idName: string) =>
   function HOC() {
     return (
       <motion.section

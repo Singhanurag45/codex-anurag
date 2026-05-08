@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { achievements } from "../../lib/constants";
+import { achievements } from "../../lib/site-data";
 import { Trophy, ExternalLink, Award } from "lucide-react";
 
 type Achievement = {
