@@ -143,8 +143,10 @@ export const achievements = [
     link: "https://www.udemy.com/certificate/UC-4725a447-f532-4b01-92ac-bfe165521573/",
   },
   {
-    title: "Data Structures & Algorithms using C++ with System Design - Coding Blocks",
-    description: "Earned a Certificate of Excellence for outstanding performance.",
+    title:
+      "Data Structures & Algorithms using C++ with System Design - Coding Blocks",
+    description:
+      "Earned a Certificate of Excellence for outstanding performance.",
     link: "https://drive.google.com/file/d/1KRoKcUOVNWtpJQyhAoAV7UPoE7eW6z5M/view",
   },
 ];

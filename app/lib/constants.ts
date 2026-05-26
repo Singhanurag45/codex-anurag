@@ -115,7 +115,7 @@ export const aboutSection = {
     institution: "Maharaja Agrasen Institute of Technology, Delhi",
     degree: "B.Tech in Computer Science",
     gpa: "CGPA: 8.13",
-    years: "2023-2026"
+    years: "2023-2026",
   },
 };
 
@@ -263,12 +263,14 @@ export const leetCodeStats = {
 export const achievements = [
   {
     title: "Solved 500+ Data Structures & Algorithms Problems",
-    description: "Solved 400 problems on LeetCode and 100+ problems on GeeksforGeeks.",
+    description:
+      "Solved 400 problems on LeetCode and 100+ problems on GeeksforGeeks.",
     link: "https://leetcode.com/Anuragsingh_123/",
   },
   {
     title: "Finalist - BUILD WARS Hackathon",
-    description: "Collaborated in a team of 4 to build an innovative project under time constraints.",
+    description:
+      "Collaborated in a team of 4 to build an innovative project under time constraints.",
     link: "https://drive.google.com/file/d/1GCrv4DYGOFj0xgO8nqBbWuGGWJxf-NEI/view",
   },
   {
@@ -278,12 +280,15 @@ export const achievements = [
   },
   {
     title: "Full-Stack Web Development Course - Udemy",
-    description: "Completed a comprehensive full-stack web development course by Hitesh Choudhary.",
+    description:
+      "Completed a comprehensive full-stack web development course by Hitesh Choudhary.",
     link: "https://www.udemy.com/certificate/UC-4725a447-f532-4b01-92ac-bfe165521573/",
   },
   {
-    title: "Data Structures & Algorithms using C++ with System Design - Coding Blocks",
-    description: "Earned a Certificate of Excellence for outstanding performance.",
+    title:
+      "Data Structures & Algorithms using C++ with System Design - Coding Blocks",
+    description:
+      "Earned a Certificate of Excellence for outstanding performance.",
     link: "https://drive.google.com/file/d/1KRoKcUOVNWtpJQyhAoAV7UPoE7eW6z5M/view",
   },
 ];
