@@ -26,7 +26,7 @@ export const hero = {
     "MERN Stack Developer building efficient, user-centric web applications.",
   profilePic,
   leetcodeLink: "https://leetcode.com/Anuragsingh_123",
-  resumeLink: "/Anuragsingh_Resume (1).pdf",
+  resumeLink: "/Anurag_singh_Resume.pdf",
 };
 
 export const projects = [

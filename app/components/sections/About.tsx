@@ -59,7 +59,7 @@ const ParallaxAbout = () => {
                     Aggregate Grade
                   </span>
                   <span className="text-[#a285fd] font-black text-3xl">
-                    7.8
+                    8.13
                   </span>
                 </div>
               </div>

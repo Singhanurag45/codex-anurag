@@ -102,7 +102,7 @@ export const hero = {
     "MERN Stack Developer building efficient, user-centric web applications.",
   profilePic,
   leetcodeLink: "https://leetcode.com/Anuragsingh_123",
-  resumeLink: "/Anuragsingh_Resume (1).pdf",
+  resumeLink: "/Anurag_singh_Resume.pdf",
 };
 
 // ================== About Section ==================
@@ -114,7 +114,7 @@ export const aboutSection = {
   education: {
     institution: "Maharaja Agrasen Institute of Technology, Delhi",
     degree: "B.Tech in Computer Science",
-    gpa: "CGPA: 7.8",
+    gpa: "CGPA: 8.13",
     years: "2023-2026"
   },
 };
