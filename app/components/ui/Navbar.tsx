@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { navLinks } from "../../lib/site-data";
+import { navLinks } from "../../lib/constants";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Briefcase,
   CalendarDays,
@@ -38,19 +39,36 @@ const Experience = () => {
           transition={{ duration: 0.55 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <p className="text-[#a285fd] text-xs sm:text-sm font-bold uppercase tracking-[0.35em] mb-4">
-            Work Journey
-          </p>
-          <h2 className="text-white font-black md:text-6xl text-4xl tracking-tight">
-            Experience.
-          </h2>
-          <div className="w-24 h-1.5 bg-[#a285fd] rounded-full mx-auto mt-6 shadow-[0_0_15px_#a285fd]" />
-          <p className="mt-6 text-gray-400 text-lg leading-relaxed">
-            A snapshot of my current internship at UrbanSkyMedia and the kind of
-            work I’m contributing to from May 2026 onward.
-          </p>
-        </motion.div>
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#a285fd]/30 bg-[#a285fd]/10 px-4 py-2 text-[#d6c8ff] text-xs font-bold uppercase tracking-[0.25em]">
+              <Briefcase size={14} />
+              Full Stack Engineer
+            </div>
 
+            <div className="flex items-center gap-4 mt-5">
+                    <div className="w-24 h-24 rounded-xl overflow-hidden border border-white/10 bg-[#050816] flex items-center justify-center">
+                      <Image
+                        src="/companylogo.png"
+                        alt="UrbanSkyMedia logo"
+                        width={96}
+                        height={96}
+                        className="object-contain"
+                      />
+                    </div>
+
+              <div>
+                <h3 className="text-white text-3xl sm:text-4xl font-black tracking-tight">
+                  UrbanSkyMedia
+                </h3>
+                <p className="mt-2 text-gray-400 text-sm sm:text-base font-medium">
+                  Working on the company portfolio website using Next.js, with a
+                  focus on clean UI, reusable components, and smooth
+                  interactions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-[1.25fr_0.75fr] gap-8 items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 28 }}

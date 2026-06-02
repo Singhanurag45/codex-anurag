@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { projects } from "../../lib/site-data";
+import { projects } from "../../lib/constants";
 import ProjectCard from "../ui/ProjectCard";
 import { Github, ArrowUpRight } from "lucide-react"; // Added for the new button
 

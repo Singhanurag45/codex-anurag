@@ -3,7 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { leetCodeStats } from "../../lib/site-data";
+import { leetCodeStats } from "../../lib/constants";
 import { ExternalLink, Trophy, Calendar, CheckCircle } from "lucide-react";
 
 type ProgressBarProps = {

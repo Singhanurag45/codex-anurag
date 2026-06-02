@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Code2, Cpu, Download, Layout } from "lucide-react";
-import { hero } from "../../lib/site-data";
+import { hero } from "../../lib/constants";
 
 export default function CyberHero() {
   return (

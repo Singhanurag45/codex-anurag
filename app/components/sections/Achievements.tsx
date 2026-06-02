@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { achievements } from "../../lib/site-data";
+import { achievements } from "../../lib/constants";
 import { Trophy, ExternalLink, Award } from "lucide-react";
 
 type Achievement = {
@@ -16,74 +16,94 @@ const AchievementCard: React.FC<Achievement & { index: number }> = ({
   description,
   link,
   index,
-}) => (
-  <motion.div
-    initial={{ opacity: 0, x: -30 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="group relative"
-  >
-    {/* Subtle side accent that glows on hover */}
-    <div className="absolute -inset-0.5 bg-linear-to-r from-[#a285fd] to-blue-500 rounded-2xl opacity-0 group-hover:opacity-10 transition duration-500 blur"></div>
+}) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.1,
+      }}
+      className="group"
+    >
+      <div className="relative h-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_20px_60px_rgba(34,211,238,0.12)]">
+        <div className="flex items-start gap-5">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 text-cyan-400">
+            <Trophy size={24} />
+          </div>
 
-    <div className="relative bg-[#10153e] p-6 rounded-2xl border border-white/10 hover:border-[#a285fd]/50 transition-all shadow-xl flex gap-5 items-start">
-      <div className="shrink-0">
-        <div className="w-12 h-12 rounded-xl bg-[#a285fd]/10 flex items-center justify-center text-[#a285fd] border border-[#a285fd]/20">
-          <Trophy size={22} />
+          <div className="flex-1">
+            <h3 className="text-xl font-bold text-white transition-colors group-hover:text-cyan-400">
+              {title}
+            </h3>
+
+            <p className="mt-3 text-sm leading-relaxed text-gray-400">
+              {description}
+            </p>
+
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition hover:text-white"
+              >
+                View Achievement
+                <ExternalLink
+                  size={15}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </a>
+            )}
+          </div>
         </div>
       </div>
-
-      <div className="flex-1">
-        <h3 className="text-white font-bold text-xl group-hover:text-[#a285fd] transition-colors">
-          {title}
-        </h3>
-        <p className="mt-2 text-gray-400 text-sm leading-relaxed tracking-wide">
-          {description}
-        </p>
-
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-[#a285fd] hover:text-white text-xs font-bold uppercase tracking-widest mt-4 transition-colors group/link"
-          >
-            Achievement
-            <ExternalLink
-              size={14}
-              className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
-            />
-          </a>
-        )}
-      </div>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 export default function Achievements() {
   return (
-    <section id="achievements" className="py-24 px-6 bg-[#050816]">
-      <div className="max-w-5xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
+    <section
+      id="achievements"
+      className="relative overflow-hidden bg-[#050816] py-24 px-6"
+    >
+      {/* Background Glow */}
+      <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-purple-500/10 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-6xl">
+        {/* Header */}
+        <div className="mb-16 text-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 bg-[#10153e] px-4 py-1.5 rounded-full border border-white/10 mb-4"
+            viewport={{ once: true }}
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-xl"
           >
-            <Award size={16} className="text-[#a285fd]" />
-            <span className="text-[10px] font-bold text-gray-300 uppercase tracking-[0.2em]">
+            <Award size={16} className="text-cyan-400" />
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-gray-300">
               Milestones
             </span>
           </motion.div>
-          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight">
-            Key <span className="text-[#a285fd]">Achievements.</span>
+
+          <h2 className="text-5xl font-black tracking-tight md:text-6xl">
+            <span className="text-white">My</span>
+            <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+              Achievements
+            </span>
           </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-gray-400">
+            Highlights from my coding journey, academic growth, competitive
+            programming, and professional experience.
+          </p>
         </div>
 
-        {/* Achievement List */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Achievement Cards */}
+        <div className="grid gap-6 md:grid-cols-2">
           {achievements.map((achievement, index) => (
             <AchievementCard
               key={`achievement-${index}`}
