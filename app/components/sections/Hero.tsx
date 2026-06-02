@@ -1,114 +1,215 @@
+"use client";
+
 import React from "react";
-import { Box, Code2, Cpu, Download, Layout } from "lucide-react";
+import Image from "next/image";
+import {
+  ArrowDown,
+  Download,
+  Github,
+  Linkedin,
+  Code2,
+  Sparkles,
+} from "lucide-react";
+import { motion } from "framer-motion";
 import { hero } from "../../lib/constants";
 
-export default function CyberHero() {
+export default function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center bg-[#050816] overflow-hidden py-20">
+    <section
+      id="home"
+      className="relative min-h-screen overflow-hidden bg-[#050816] flex items-center"
+    >
+      {/* Background Glow */}
+      <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-[#a285fd]/10 blur-[120px]" />
+      <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-blue-500/10 blur-[120px]" />
+
+      {/* Grid */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `linear-gradient(#a285fd 1px, transparent 1px), linear-gradient(90deg, #a285fd 1px, transparent 1px)`,
+          backgroundImage: `
+            linear-gradient(#a285fd 1px, transparent 1px),
+            linear-gradient(90deg, #a285fd 1px, transparent 1px)
+          `,
           backgroundSize: "40px 40px",
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
-        <div className="lg:col-span-8">
-          <div className="flex items-center gap-3 text-[#a285fd] mb-6">
-            <Cpu size={18} className="animate-pulse" />
-            <span className="text-xs font-mono tracking-[0.4em] uppercase text-gray-400">
-              System.Ready(<span className="text-[#a285fd]">Anurag_Singh</span>)
-            </span>
-          </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* Left Side */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#a285fd]/30 bg-[#a285fd]/10 px-4 py-2 text-[#d6c8ff] text-xs font-bold uppercase tracking-[0.25em] mb-8">
+              <Sparkles size={14} />
+              Full Stack Developer
+            </div>
 
-          <h1 className="text-white text-5xl md:text-7xl lg:text-8xl font-black leading-none mb-6 tracking-tighter">
-            CRAFTING <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[#a285fd] via-indigo-400 to-blue-500">
-              DIGITAL LOGIC.
-            </span>
-          </h1>
-
-          <div className="space-y-4 mb-10">
-            <p className="text-gray-300 text-lg md:text-xl font-bold italic tracking-wide">
-              B.Tech CSE @ MAIT Delhi &bull; Class of 2026
-            </p>
-            <p className="text-gray-400 text-base md:text-lg max-w-xl leading-relaxed border-l-2 border-white/5 pl-6">
-              MERN & Next.js specialist. Transforming complex algorithmic
-              problems into seamless, scalable user experiences with 500+ solved
-              challenges.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-5">
-            <a
-              href="#projects"
-              className="relative group overflow-hidden px-10 py-4 bg-white text-black font-black rounded-2xl transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)]"
-            >
-              <span className="relative z-10 flex items-center gap-2 text-sm uppercase">
-                Explore Work <Code2 size={18} />
+            <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight">
+              Hi, I'm{" "}
+              <span className="bg-gradient-to-r from-[#a285fd] via-indigo-400 to-blue-500 bg-clip-text text-transparent">
+                Anurag Singh
               </span>
-              <div className="absolute inset-0 bg-[#a285fd] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            </a>
+            </h1>
 
-            <a
-              href={hero.resumeLink}
-              download="Anurag_Singh_Resume.pdf"
-              className="flex items-center gap-2 text-white font-bold px-10 py-4 border border-white/10 rounded-2xl hover:bg-white/5 transition-all text-sm uppercase cursor-pointer"
-            >
-              Get Resume <Download size={18} />
-            </a>
-          </div>
-        </div>
+            <p className="mt-8 text-xl text-gray-300 font-semibold">
+              MERN Stack & Next.js Developer
+            </p>
 
-        <div className="lg:col-span-4 relative flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-[340px] group">
-            <div className="absolute inset-0 bg-linear-to-tr from-[#a285fd] to-blue-500 rounded-[2.5rem] blur-[80px] opacity-10 group-hover:opacity-25 transition-opacity duration-700" />
+            <p className="mt-5 max-w-2xl text-gray-400 leading-relaxed text-lg">
+              B.Tech Computer Science student at MAIT Delhi, passionate about
+              building modern web applications, scalable backend systems, and
+              solving algorithmic challenges with clean and efficient code.
+            </p>
 
-            <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 bg-[#10153e]/40 p-2 backdrop-blur-3xl shadow-2xl group">
-              <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-[#a285fd]/30 rounded-tr-[2.5rem] pointer-events-none z-20" />
-
-              <div className="relative rounded-4xl overflow-hidden aspect-4/5 bg-[#050816]">
-                <div className="hero-scan-line absolute left-0 right-0 h-0.5 bg-linear-to-r from-transparent via-[#a285fd] to-transparent z-10 opacity-40" />
-
-                <img
-                  src={hero.profilePic}
-                  alt="Anurag Singh"
-                  className="absolute inset-0 h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-in-out"
-                  fetchPriority="high"
-                />
-
-                <div className="absolute inset-0 bg-linear-to-t from-[#050816]/60 to-transparent pointer-events-none" />
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4 mt-10 max-w-xl">
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 text-center">
+                <h3 className="text-white text-2xl font-black">500+</h3>
+                <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+                  DSA Problems
+                </p>
               </div>
 
-              <div className="hero-float absolute -right-4 top-10 bg-white p-4 rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,0.4)] border border-gray-100">
-                <div className="flex flex-col items-center">
-                  <span className="text-black font-black text-2xl leading-none">
-                    500+
-                  </span>
-                  <span className="text-gray-500 text-[9px] font-bold uppercase tracking-widest mt-1">
-                    DSA Solved
-                  </span>
-                </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 text-center">
+                <h3 className="text-white text-2xl font-black">15+</h3>
+                <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+                  Projects
+                </p>
               </div>
 
-              <div className="absolute bottom-6 left-6 flex flex-col gap-2">
-                <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
-                  <Layout size={12} className="text-[#a285fd]" />
-                  <span className="text-white text-[10px] font-bold uppercase tracking-tight">
-                    Next.js
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/10">
-                  <Box size={12} className="text-blue-400" />
-                  <span className="text-white text-[10px] font-bold uppercase tracking-tight">
-                    MERN Stack
-                  </span>
-                </div>
+              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 text-center">
+                <h3 className="text-white text-2xl font-black">2026</h3>
+                <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+                  Graduate
+                </p>
               </div>
             </div>
-          </div>
+
+            {/* CTA */}
+            <div className="flex flex-wrap gap-4 mt-10">
+              <a
+                href="#projects"
+                className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#a285fd] to-indigo-600 px-8 py-4 text-white font-bold transition-all duration-300 hover:scale-[1.03]"
+              >
+                View Projects
+                <Code2
+                  size={18}
+                  className="transition-transform group-hover:rotate-6"
+                />
+              </a>
+
+              <a
+                href={hero.resumeLink}
+                download
+                className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-8 py-4 text-white font-bold backdrop-blur-xl transition-all duration-300 hover:border-[#a285fd]/40 hover:bg-[#a285fd]/10"
+              >
+                Resume
+                <Download size={18} />
+              </a>
+            </div>
+
+            {/* Social */}
+            <div className="flex items-center gap-4 mt-8">
+              <a
+                href="https://github.com/Singhanurag45"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl border border-white/10 bg-white/5 p-4 text-gray-300 transition-all hover:text-white hover:border-[#a285fd]/40"
+              >
+                <Github size={20} />
+              </a>
+
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl border border-white/10 bg-white/5 p-4 text-gray-300 transition-all hover:text-white hover:border-[#a285fd]/40"
+              >
+                <Linkedin size={20} />
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Right Side */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="flex justify-center lg:justify-end"
+          >
+            <div className="relative">
+              {/* Glow */}
+              <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-r from-[#a285fd]/20 to-blue-500/20 blur-[80px]" />
+
+              <div className="relative rounded-[3rem] border border-white/10 bg-white/5 backdrop-blur-xl p-3 shadow-2xl">
+                <div className="relative overflow-hidden rounded-[2.5rem]">
+                  <Image
+                    src={hero.profilePic}
+                    alt="Anurag Singh"
+                    width={450}
+                    height={550}
+                    priority
+                    className="object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/40 to-transparent" />
+                </div>
+
+                {/* Floating Card */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                  }}
+                  className="absolute -left-8 top-10 rounded-3xl border border-white/10 bg-[#10153e] p-5 shadow-xl"
+                >
+                  <p className="text-3xl font-black text-white">500+</p>
+                  <p className="text-xs uppercase tracking-widest text-gray-400">
+                    Problems Solved
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                  }}
+                  className="absolute -right-8 bottom-10 rounded-3xl border border-white/10 bg-[#10153e] p-5 shadow-xl"
+                >
+                  <p className="text-3xl font-black text-white">Next.js</p>
+                  <p className="text-xs uppercase tracking-widest text-gray-400">
+                    Primary Stack
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          animate={{ y: [0, 12, 0] }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+          }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        >
+          <a
+            href="#about"
+            className="flex flex-col items-center gap-2 text-gray-500 hover:text-white transition-colors"
+          >
+            <span className="text-xs uppercase tracking-[0.3em]">Scroll</span>
+            <ArrowDown size={18} />
+          </a>
+        </motion.div>
       </div>
     </section>
   );

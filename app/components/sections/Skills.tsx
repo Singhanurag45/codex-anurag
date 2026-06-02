@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { skills } from "../../lib/constants";
 import { IconType } from "react-icons";
+import { Code2 } from "lucide-react";
 import SectionWrapper from "../hoc/SectionWrapper";
 
 type SkillCardProps = {
@@ -15,64 +16,94 @@ type SkillCardProps = {
 const SkillCard: React.FC<SkillCardProps> = ({ name, icon: Icon, index }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 25 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
-      whileHover={{ y: -8, scale: 1.05 }}
-      className="flex flex-col items-center justify-center p-6 bg-[#10153e]/50 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transition-all group relative overflow-hidden"
+      transition={{
+        duration: 0.5,
+        delay: index * 0.04,
+      }}
+      whileHover={{
+        y: -8,
+        scale: 1.04,
+      }}
+      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/40 hover:shadow-[0_20px_50px_rgba(34,211,238,0.12)]"
     >
-      {/* Subtle hover glow effect */}
-      <div className="absolute inset-0 bg-[#a285fd]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-blue-500/0 to-purple-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-hover:from-cyan-500/5 group-hover:via-blue-500/5 group-hover:to-purple-500/5" />
 
-      <div className="relative z-10">
-        <Icon className="text-4xl text-gray-400 group-hover:text-[#a285fd] transition-colors duration-300 mb-3" />
+      <div className="relative z-10 flex flex-col items-center">
+        <Icon className="mb-4 text-5xl text-gray-400 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-400" />
+
+        <p className="text-center text-xs font-bold uppercase tracking-[0.2em] text-gray-300 transition-colors group-hover:text-white">
+          {name}
+        </p>
       </div>
-
-      <p className="relative z-10 text-gray-400 group-hover:text-white text-[10px] font-black uppercase tracking-[0.2em] transition-colors">
-        {name}
-      </p>
     </motion.div>
   );
 };
 
-const Skills: React.FC = () => {
+const Skills = () => {
   return (
-    <section className="relative w-full py-24 bg-[#050816]">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section Header */}
+    <section className="relative overflow-hidden bg-[#050816] py-24">
+      {/* Background Glow */}
+      <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
+
+      <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-purple-500/10 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="mb-20 text-center"
         >
-          <h2 className="text-white font-black md:text-6xl text-4xl tracking-tight">
-            Technical <span className="text-[#a285fd]">Skills.</span>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-xl">
+            <Code2 size={16} className="text-cyan-400" />
+
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-gray-300">
+              Tech Stack
+            </span>
+          </div>
+
+          <h2 className="text-5xl font-black tracking-tight md:text-6xl">
+            <span className="text-white">Technical</span>
+
+            <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+              Skills
+            </span>
           </h2>
-          <div className="w-24 h-1.5 bg-[#a285fd] rounded-full mx-auto mt-6 shadow-[0_0_15px_#a285fd]" />
-          <p className="mt-6 text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            A specialized toolkit focused on building high-performance
-            full-stack applications and solving complex algorithmic problems.
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-gray-400">
+            Technologies and tools I use to build modern, scalable web
+            applications and solve real-world engineering challenges.
           </p>
         </motion.div>
 
-        {/* Categories as Clean Rows */}
-        <div className="space-y-20">
+        {/* Categories */}
+        <div className="space-y-12">
           {skills.map((category) => (
-            <div key={category.title} className="relative">
-              {/* Category Label */}
-              <div className="flex items-center gap-4 mb-10">
-                <div className="h-px flex-1 bg-linear-to-r from-transparent via-white/10 to-transparent" />
-                <h3 className="text-white font-bold text-sm uppercase tracking-[0.3em] flex items-center gap-3">
-                  <span className="w-2 h-2 rounded-full bg-[#a285fd] shadow-[0_0_8px_#a285fd]" />
+            <motion.div
+              key={category.title}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
+            >
+              {/* Category Title */}
+              <div className="mb-8 flex items-center gap-4">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent" />
+
+                <h3 className="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.3em] text-white">
+                  <span className="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_#22d3ee]" />
                   {category.title}
                 </h3>
-                <div className="h-px flex-1 bg-linear-to-r from-transparent via-white/10 to-transparent" />
+
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
               </div>
 
-              {/* Responsive Grid of Cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {/* Skills Grid */}
+              <div className="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
                 {category.technologies.map((tech, index) => (
                   <SkillCard
                     key={tech.name}
@@ -82,7 +113,7 @@ const Skills: React.FC = () => {
                   />
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
