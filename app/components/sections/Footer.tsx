@@ -16,12 +16,7 @@ const socialLinks = [
   },
 ];
 
-const footerLinks = [
-  { name: "About", link: "#about" },
-  { name: "Skills", link: "#skills" },
-  { name: "Projects", link: "#projects" },
-  { name: "Contact", link: "#contact" },
-];
+import { navLinks } from "../../lib/site-data";
 
 export default function Footer() {
   return (
@@ -44,13 +39,13 @@ export default function Footer() {
                 Navigation
               </h4>
               <ul className="space-y-3">
-                {footerLinks.map((link) => (
-                  <li key={link.name}>
+                {navLinks.map((link) => (
+                  <li key={link.id}>
                     <a
-                      href={link.link}
+                      href={`#${link.id}`}
                       className="text-gray-500 hover:text-[#a285fd] text-sm transition-colors duration-300"
                     >
-                      {link.name}
+                      {link.title}
                     </a>
                   </li>
                 ))}

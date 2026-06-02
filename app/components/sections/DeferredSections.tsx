@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 
 const About = dynamic(() => import("./About"), { ssr: false });
 const Skills = dynamic(() => import("./Skills"), { ssr: false });
+const Experience = dynamic(() => import("./Experience"), { ssr: false });
 const Projects = dynamic(() => import("./Projects"), { ssr: false });
 const LeetCode = dynamic(() => import("./LeetCode"), { ssr: false });
 const Achievements = dynamic(() => import("./Achievements"), { ssr: false });
@@ -20,6 +21,7 @@ type LazySectionConfig = {
 const sections: LazySectionConfig[] = [
   { id: "about", minHeight: "760px", Component: About },
   { id: "skills", minHeight: "980px", Component: Skills },
+  { id: "experience", minHeight: "760px", Component: Experience },
   { id: "projects", minHeight: "1180px", Component: Projects },
   { id: "leetcode", minHeight: "920px", Component: LeetCode },
   { id: "achievements", minHeight: "780px", Component: Achievements },
