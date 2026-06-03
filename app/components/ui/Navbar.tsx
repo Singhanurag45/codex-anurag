@@ -8,12 +8,12 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+    <header className="fixed left-0 right-0 top-3 z-50 flex justify-center px-3 sm:top-5 sm:px-4">
       <nav className="w-full max-w-6xl">
-        <div className="flex items-center justify-between px-6 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+        <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-[#050816]/75 px-4 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.3)] backdrop-blur-xl sm:px-6 sm:py-4">
           {/* Logo */}
           <a href="#" className="group">
-            <h1 className="text-xl md:text-2xl font-black tracking-tight bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="bg-linear-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-lg font-black tracking-tight text-transparent sm:text-xl md:text-2xl">
               ANURAG
             </h1>
           </a>
@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setOpen((s) => !s)}
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-lg bg-white/3 border border-white/5"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white md:hidden"
             aria-label="Toggle menu"
           >
             {open ? <X size={18} /> : <Menu size={18} />}
@@ -54,14 +54,14 @@ const Navbar = () => {
 
         {/* Mobile Menu Drawer */}
         {open && (
-          <div className="md:hidden mt-3 bg-[#050816]/80 border border-white/5 rounded-2xl px-4 py-4 backdrop-blur-md shadow-lg">
-            <ul className="flex flex-col gap-3">
+          <div className="fixed left-3 right-3 top-20 max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-2xl border border-white/10 bg-[#050816]/95 p-4 shadow-2xl shadow-black/50 backdrop-blur-xl sm:left-4 sm:right-4 sm:top-24 md:hidden">
+            <ul className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <a
                     href={`#${link.id}`}
                     onClick={() => setOpen(false)}
-                    className="block text-sm font-medium text-gray-300 hover:text-white px-3 py-2 rounded-lg transition-colors"
+                    className="block rounded-xl px-4 py-3 text-base font-medium text-gray-200 transition-colors hover:bg-white/5 hover:text-white"
                   >
                     {link.title}
                   </a>
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="inline-flex items-center justify-center w-full px-4 py-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold mt-2"
+                  className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-linear-to-r from-cyan-500 to-blue-600 px-4 py-3 font-semibold text-white"
                 >
                   Hire Me
                 </a>
