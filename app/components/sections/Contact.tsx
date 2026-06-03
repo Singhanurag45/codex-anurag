@@ -64,7 +64,7 @@ try {
     email: "",
     message: "",
   });
-} catch (error) {
+} catch {
   setLoading(false);
   alert("Something went wrong. Please try again.");
 }
@@ -73,13 +73,13 @@ try {
 
 return ( <section
    id="contact"
-   className="relative py-24 px-6 bg-[#050816] overflow-hidden"
+   className="relative overflow-hidden bg-[#050816] px-4 py-20 sm:px-6 sm:py-24"
  >
-{/* Background Glow */} <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" /> <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-purple-500/10 blur-[120px]" />
+{/* Background Glow */} <div className="absolute left-0 top-20 hidden h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px] sm:block" /> <div className="absolute bottom-20 right-0 hidden h-72 w-72 rounded-full bg-purple-500/10 blur-[120px] sm:block" />
 
 
-  <div className="relative max-w-6xl mx-auto">
-    <div className="grid lg:grid-cols-2 gap-16 items-center">
+  <div className="relative mx-auto max-w-6xl">
+    <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
       {/* Left Side */}
       <motion.div
         initial={{ opacity: 0, x: -60 }}
@@ -89,43 +89,43 @@ return ( <section
         className="space-y-8"
       >
         <div>
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/20 bg-green-500/10 text-green-400 text-sm font-medium mb-6">
-            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+          <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-green-500/20 bg-green-500/10 px-4 py-2 text-xs font-medium text-green-400 sm:text-sm">
+            <div className="h-2 w-2 shrink-0 rounded-full bg-green-400 animate-pulse" />
             Available for Internships & Full-Time Roles
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight">
-            Let's Build
+          <h2 className="text-3xl font-black tracking-tight sm:text-4xl md:text-6xl">
+            Let&apos;s Build
             <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
               Something Amazing
             </span>
           </h2>
 
-          <p className="text-gray-400 text-lg mt-6 leading-relaxed">
+          <p className="mt-4 text-base leading-relaxed text-gray-400 sm:mt-6 sm:text-lg">
             Have a project in mind or want to discuss opportunities?
-            Feel free to reach out. I'll respond as soon as possible.
+            Feel free to reach out. I&apos;ll respond as soon as possible.
           </p>
         </div>
 
         {/* Contact Details */}
         <div className="space-y-6">
-          <div className="flex items-center gap-5">
-            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400">
+          <div className="flex items-start gap-4 sm:items-center sm:gap-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-cyan-400 sm:h-14 sm:w-14">
               <Mail size={24} />
             </div>
 
-            <div>
+            <div className="min-w-0">
               <p className="text-xs uppercase tracking-widest text-gray-500 font-bold">
                 Email
               </p>
-              <p className="text-white text-lg font-medium">
+              <p className="break-words text-base font-medium text-white sm:text-lg">
                 anuragsinghrbl2002@gmail.com
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-5">
-            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-purple-400">
+          <div className="flex items-center gap-4 sm:gap-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-purple-400 sm:h-14 sm:w-14">
               <MapPin size={24} />
             </div>
 
@@ -189,12 +189,12 @@ return ( <section
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="relative bg-white/5 backdrop-blur-xl p-8 md:p-10 rounded-[2rem] border border-white/10 hover:border-cyan-400/30 transition-all duration-500 shadow-[0_8px_40px_rgba(0,0,0,0.3)]"
+        className="relative rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-[0_8px_40px_rgba(0,0,0,0.3)] backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/30 sm:p-8 md:p-10"
       >
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="space-y-6"
+          className="space-y-5 sm:space-y-6"
         >
           {/* Name */}
           <div>
@@ -215,7 +215,7 @@ return ( <section
                 value={form.name}
                 onChange={handleChange}
                 placeholder="John Doe"
-                className="w-full pl-12 pr-4 py-4 bg-[#050816] border border-white/10 rounded-2xl outline-none text-white placeholder:text-gray-600 focus:border-cyan-400"
+                className="w-full rounded-2xl border border-white/10 bg-[#050816] py-4 pl-12 pr-4 text-white outline-none placeholder:text-gray-600 focus:border-cyan-400"
               />
             </div>
           </div>
@@ -239,7 +239,7 @@ return ( <section
                 value={form.email}
                 onChange={handleChange}
                 placeholder="john@example.com"
-                className="w-full pl-12 pr-4 py-4 bg-[#050816] border border-white/10 rounded-2xl outline-none text-white placeholder:text-gray-600 focus:border-cyan-400"
+                className="w-full rounded-2xl border border-white/10 bg-[#050816] py-4 pl-12 pr-4 text-white outline-none placeholder:text-gray-600 focus:border-cyan-400"
               />
             </div>
           </div>
@@ -263,7 +263,7 @@ return ( <section
                 value={form.message}
                 onChange={handleChange}
                 placeholder="Tell me about your project..."
-                className="w-full pl-12 pr-4 py-4 bg-[#050816] border border-white/10 rounded-2xl outline-none text-white placeholder:text-gray-600 resize-none focus:border-cyan-400"
+                className="w-full resize-none rounded-2xl border border-white/10 bg-[#050816] py-4 pl-12 pr-4 text-white outline-none placeholder:text-gray-600 focus:border-cyan-400"
               />
             </div>
           </div>
@@ -272,7 +272,7 @@ return ( <section
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-5 rounded-2xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3"
+            className="flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 py-4 font-bold text-white transition-all duration-300 hover:scale-[1.02] sm:py-5"
           >
             {loading ? "Sending..." : "Send Message"}
 

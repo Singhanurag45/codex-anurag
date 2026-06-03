@@ -26,7 +26,7 @@ color,
 }) => {
 const percentage = Math.round((value / max) * 100);
 
-return ( <div className="mb-6"> <div className="flex justify-between items-end mb-2"> <span className="text-xs font-bold uppercase tracking-widest text-gray-400">
+return ( <div className="mb-6"> <div className="mb-2 flex items-end justify-between gap-3"> <span className="text-xs font-bold uppercase tracking-widest text-gray-400">
 {label} </span>
 
 
@@ -85,14 +85,14 @@ const circumference = 2 * Math.PI * 80;
 
 return ( <section
    id="leetcode"
-   className="relative overflow-hidden bg-[#050816] py-24 px-6"
+   className="relative overflow-hidden bg-[#050816] px-4 py-20 sm:px-6 sm:py-24"
  >
-{/* Background Glow */} <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" /> <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-purple-500/10 blur-[120px]" />
+{/* Background Glow */} <div className="absolute left-0 top-20 hidden h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px] sm:block" /> <div className="absolute bottom-20 right-0 hidden h-72 w-72 rounded-full bg-purple-500/10 blur-[120px] sm:block" />
 
 
   <div className="relative mx-auto max-w-6xl">
     {/* Header */}
-    <div className="mb-16 text-center">
+    <div className="mb-12 text-center sm:mb-16">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -111,7 +111,7 @@ return ( <section
         </span>
       </motion.div>
 
-      <h2 className="text-5xl font-black tracking-tight md:text-6xl">
+      <h2 className="text-3xl font-black tracking-tight sm:text-4xl md:text-6xl">
         <span className="text-white">Problem Solving</span>
 
         <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
@@ -119,7 +119,7 @@ return ( <section
         </span>
       </h2>
 
-      <p className="mx-auto mt-6 max-w-2xl text-gray-400">
+      <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-400 sm:mt-6 sm:text-base">
         Consistent practice in Data Structures & Algorithms through
         LeetCode with a focus on optimization, problem solving,
         and coding excellence.
@@ -127,9 +127,9 @@ return ( <section
     </div>
 
     {/* Quick Stats */}
-    <div className="mb-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl">
-        <h3 className="text-3xl font-black text-white">
+    <div className="mb-10 grid grid-cols-1 gap-3 min-[420px]:grid-cols-2 sm:mb-12 sm:gap-4 md:grid-cols-4">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-xl sm:p-5">
+        <h3 className="text-2xl font-black text-white sm:text-3xl">
           {problemsSolvedTotal}
         </h3>
         <p className="mt-1 text-sm text-gray-400">
@@ -137,8 +137,8 @@ return ( <section
         </p>
       </div>
 
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl">
-        <h3 className="text-3xl font-black text-white">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-xl sm:p-5">
+        <h3 className="break-words text-2xl font-black text-white sm:text-3xl">
           {leetCodeStats.rank}
         </h3>
         <p className="mt-1 text-sm text-gray-400">
@@ -146,8 +146,8 @@ return ( <section
         </p>
       </div>
 
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl">
-        <h3 className="text-3xl font-black text-white">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-xl sm:p-5">
+        <h3 className="text-2xl font-black text-white sm:text-3xl">
           {leetCodeStats.totalActiveDays}
         </h3>
         <p className="mt-1 text-sm text-gray-400">
@@ -155,8 +155,8 @@ return ( <section
         </p>
       </div>
 
-      <div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl">
-        <h3 className="text-3xl font-black text-white">
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-xl sm:p-5">
+        <h3 className="text-2xl font-black text-white sm:text-3xl">
           {leetCodeStats.badges.length}
         </h3>
         <p className="mt-1 text-sm text-gray-400">
@@ -172,7 +172,7 @@ return ( <section
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="rounded-[2rem] border border-white/10 bg-white/5 p-8 text-center backdrop-blur-xl"
+        className="rounded-[2rem] border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl sm:p-8"
       >
         <div className="relative mx-auto mb-6 h-32 w-32">
           <div className="absolute inset-0 rounded-full bg-cyan-500/20 blur-2xl" />
@@ -219,12 +219,12 @@ return ( <section
         initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
-        className="lg:col-span-2 rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
+        className="rounded-[2rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl sm:p-8 lg:col-span-2"
       >
         {/* Progress Section */}
-        <div className="mb-10 flex flex-col items-center gap-10 border-b border-white/10 pb-10 md:flex-row">
-          <div className="relative flex h-44 w-44 items-center justify-center">
-            <svg className="h-full w-full -rotate-90">
+        <div className="mb-8 flex flex-col items-center gap-8 border-b border-white/10 pb-8 sm:mb-10 sm:gap-10 sm:pb-10 md:flex-row">
+          <div className="relative flex h-36 w-36 shrink-0 items-center justify-center sm:h-44 sm:w-44">
+            <svg className="h-full w-full -rotate-90" viewBox="0 0 176 176">
               <circle
                 strokeWidth="10"
                 stroke="currentColor"
@@ -275,7 +275,7 @@ return ( <section
             </svg>
 
             <div className="absolute text-center">
-              <div className="text-5xl font-black text-white">
+              <div className="text-4xl font-black text-white sm:text-5xl">
                 {problemsSolvedTotal}
               </div>
 
@@ -310,44 +310,44 @@ return ( <section
         </div>
 
         {/* Platform Stats */}
-        <div className="mb-10 grid gap-4 md:grid-cols-3">
-          <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#050816]/50 p-4">
-            <Calendar className="text-cyan-400" />
+        <div className="mb-8 grid gap-4 sm:mb-10 md:grid-cols-3">
+          <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#050816]/50 p-4 sm:gap-4">
+            <Calendar className="shrink-0 text-cyan-400" />
 
             <div>
               <p className="text-xs uppercase tracking-widest text-gray-500">
                 Active Days
               </p>
 
-              <p className="text-xl font-bold text-white">
+              <p className="text-lg font-bold text-white sm:text-xl">
                 {leetCodeStats.totalActiveDays}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#050816]/50 p-4">
-            <CheckCircle className="text-emerald-400" />
+          <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#050816]/50 p-4 sm:gap-4">
+            <CheckCircle className="shrink-0 text-emerald-400" />
 
             <div>
               <p className="text-xs uppercase tracking-widest text-gray-500">
                 Submissions
               </p>
 
-              <p className="text-xl font-bold text-white">
+              <p className="text-lg font-bold text-white sm:text-xl">
                 {leetCodeStats.submissionsPastYear}
               </p>
             </div>
           </div>
 
-          <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-[#050816]/50 p-4">
-            <Trophy className="text-amber-400" />
+          <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#050816]/50 p-4 sm:gap-4">
+            <Trophy className="shrink-0 text-amber-400" />
 
             <div>
               <p className="text-xs uppercase tracking-widest text-gray-500">
                 Badges
               </p>
 
-              <p className="text-xl font-bold text-white">
+              <p className="text-lg font-bold text-white sm:text-xl">
                 {leetCodeStats.badges.length}
               </p>
             </div>
@@ -360,7 +360,7 @@ return ( <section
             Earned Badges
           </p>
 
-          <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-4 sm:gap-5">
             {leetCodeStats.badges.map((badge) => (
               <div
                 key={badge.id}
@@ -374,7 +374,7 @@ return ( <section
                   width={64}
                   height={64}
                   title={badge.name}
-                  className="relative transition-transform duration-300 group-hover:scale-110"
+                  className="relative h-12 w-12 transition-transform duration-300 group-hover:scale-110 sm:h-16 sm:w-16"
                 />
               </div>
             ))}

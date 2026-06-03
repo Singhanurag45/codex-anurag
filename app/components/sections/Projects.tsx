@@ -49,9 +49,7 @@ export default function Projects() {
         </div>
 
         {/* Stats Strip */}
-        <div className="mb-10 grid grid-cols-2 gap-4 md:mb-14 md:grid-cols-4">
-       
-        </div>
+        <div className="mb-10 grid grid-cols-2 gap-4 md:mb-14 md:grid-cols-4"></div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-2">

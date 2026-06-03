@@ -17,11 +17,11 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden bg-[#050816] flex items-center"
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#050816] py-24 sm:py-28 lg:py-0"
     >
       {/* Background Glow */}
-      <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-[#a285fd]/10 blur-[120px]" />
-      <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-blue-500/10 blur-[120px]" />
+      <div className="absolute left-0 top-10 h-56 w-56 rounded-full bg-[#a285fd]/10 blur-[100px] sm:left-20 sm:top-20 sm:h-72 sm:w-72 sm:blur-[120px]" />
+      <div className="absolute bottom-20 right-0 h-56 w-56 rounded-full bg-blue-500/10 blur-[100px] sm:right-20 sm:h-72 sm:w-72 sm:blur-[120px]" />
 
       {/* Grid */}
       <div
@@ -35,8 +35,8 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -44,57 +44,57 @@ export default function Hero() {
             transition={{ duration: 0.7 }}
           >
             {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#a285fd]/30 bg-[#a285fd]/10 px-4 py-2 text-[#d6c8ff] text-xs font-bold uppercase tracking-[0.25em] mb-8">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#a285fd]/30 bg-[#a285fd]/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#d6c8ff] sm:mb-8 sm:tracking-[0.25em]">
               <Sparkles size={14} />
               Full Stack Developer
             </div>
 
-            <h1 className="text-white text-5xl sm:text-6xl lg:text-7xl font-black leading-[0.95] tracking-tight">
-              Hi, I'm{" "}
+            <h1 className="text-4xl font-black leading-tight tracking-tight text-white sm:text-6xl sm:leading-[0.95] lg:text-7xl">
+              Hi, I&apos;m{" "}
               <span className="bg-gradient-to-r from-[#a285fd] via-indigo-400 to-blue-500 bg-clip-text text-transparent">
                 Anurag Singh
               </span>
             </h1>
 
-            <p className="mt-8 text-xl text-gray-300 font-semibold">
+            <p className="mt-6 text-lg font-semibold text-gray-300 sm:mt-8 sm:text-xl">
               MERN Stack & Next.js Developer
             </p>
 
-            <p className="mt-5 max-w-2xl text-gray-400 leading-relaxed text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-gray-400 sm:mt-5 sm:text-lg">
               B.Tech Computer Science student at MAIT Delhi, passionate about
               building modern web applications, scalable backend systems, and
               solving algorithmic challenges with clean and efficient code.
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mt-10 max-w-xl">
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 text-center">
-                <h3 className="text-white text-2xl font-black">500+</h3>
-                <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+            <div className="mt-8 grid max-w-xl grid-cols-1 gap-3 min-[420px]:grid-cols-3 sm:mt-10 sm:gap-4">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-xl sm:p-5">
+                <h3 className="text-2xl font-black text-white">500+</h3>
+                <p className="mt-1 text-xs uppercase tracking-widest text-gray-400">
                   DSA Problems
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 text-center">
-                <h3 className="text-white text-2xl font-black">20+</h3>
-                <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-xl sm:p-5">
+                <h3 className="text-2xl font-black text-white">20+</h3>
+                <p className="mt-1 text-xs uppercase tracking-widest text-gray-400">
                   Projects
                 </p>
               </div>
 
-              <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 text-center">
-                <h3 className="text-white text-2xl font-black">2026</h3>
-                <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">
+              <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-xl sm:p-5">
+                <h3 className="text-2xl font-black text-white">2026</h3>
+                <p className="mt-1 text-xs uppercase tracking-widest text-gray-400">
                   Graduate
                 </p>
               </div>
             </div>
 
             {/* CTA */}
-            <div className="flex flex-wrap gap-4 mt-10">
+            <div className="mt-8 flex flex-col gap-3 min-[420px]:flex-row sm:mt-10 sm:gap-4">
               <a
                 href="#projects"
-                className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#a285fd] to-indigo-600 px-8 py-4 text-white font-bold transition-all duration-300 hover:scale-[1.03]"
+                className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#a285fd] to-indigo-600 px-6 py-4 font-bold text-white transition-all duration-300 hover:scale-[1.03] sm:px-8"
               >
                 View Projects
                 <Code2
@@ -106,7 +106,7 @@ export default function Hero() {
               <a
                 href={hero.resumeLink}
                 download
-                className="inline-flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-8 py-4 text-white font-bold backdrop-blur-xl transition-all duration-300 hover:border-[#a285fd]/40 hover:bg-[#a285fd]/10"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 font-bold text-white backdrop-blur-xl transition-all duration-300 hover:border-[#a285fd]/40 hover:bg-[#a285fd]/10 sm:px-8"
               >
                 Resume
                 <Download size={18} />
@@ -114,7 +114,7 @@ export default function Hero() {
             </div>
 
             {/* Social */}
-            <div className="flex items-center gap-4 mt-8">
+            <div className="mt-8 flex items-center gap-4">
               <a
                 href="https://github.com/Singhanurag45"
                 target="_blank"
@@ -142,19 +142,19 @@ export default function Hero() {
             transition={{ duration: 0.7 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative">
+            <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-none">
               {/* Glow */}
               <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-r from-[#a285fd]/20 to-blue-500/20 blur-[80px]" />
 
-              <div className="relative rounded-[3rem] border border-white/10 bg-white/5 backdrop-blur-xl p-3 shadow-2xl">
-                <div className="relative overflow-hidden rounded-[2.5rem]">
+              <div className="relative rounded-[2rem] border border-white/10 bg-white/5 p-2 shadow-2xl backdrop-blur-xl sm:rounded-[3rem] sm:p-3">
+                <div className="relative overflow-hidden rounded-[1.7rem] sm:rounded-[2.5rem]">
                   <Image
                     src={hero.profilePic}
                     alt="Anurag Singh"
                     width={450}
                     height={550}
                     priority
-                    className="object-cover"
+                    className="h-auto w-full object-cover"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/40 to-transparent" />
@@ -167,10 +167,10 @@ export default function Hero() {
                     duration: 4,
                     repeat: Infinity,
                   }}
-                  className="absolute -left-8 top-10 rounded-3xl border border-white/10 bg-[#10153e] p-5 shadow-xl"
+                  className="absolute left-3 top-4 rounded-2xl border border-white/10 bg-[#10153e] p-3 shadow-xl sm:-left-8 sm:top-10 sm:rounded-3xl sm:p-5"
                 >
-                  <p className="text-3xl font-black text-white">500+</p>
-                  <p className="text-xs uppercase tracking-widest text-gray-400">
+                  <p className="text-xl font-black text-white sm:text-3xl">500+</p>
+                  <p className="text-[0.6rem] uppercase tracking-widest text-gray-400 sm:text-xs">
                     Problems Solved
                   </p>
                 </motion.div>
@@ -181,10 +181,10 @@ export default function Hero() {
                     duration: 4,
                     repeat: Infinity,
                   }}
-                  className="absolute -right-8 bottom-10 rounded-3xl border border-white/10 bg-[#10153e] p-5 shadow-xl"
+                  className="absolute bottom-4 right-3 rounded-2xl border border-white/10 bg-[#10153e] p-3 shadow-xl sm:-right-8 sm:bottom-10 sm:rounded-3xl sm:p-5"
                 >
-                  <p className="text-3xl font-black text-white">Next.js</p>
-                  <p className="text-xs uppercase tracking-widest text-gray-400">
+                  <p className="text-xl font-black text-white sm:text-3xl">Next.js</p>
+                  <p className="text-[0.6rem] uppercase tracking-widest text-gray-400 sm:text-xs">
                     Primary Stack
                   </p>
                 </motion.div>
@@ -200,7 +200,7 @@ export default function Hero() {
             duration: 2,
             repeat: Infinity,
           }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
+          className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 sm:block lg:bottom-10"
         >
           <a
             href="#about"

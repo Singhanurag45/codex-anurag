@@ -28,14 +28,14 @@ const AchievementCard: React.FC<Achievement & { index: number }> = ({
       }}
       className="group"
     >
-      <div className="relative h-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_20px_60px_rgba(34,211,238,0.12)]">
-        <div className="flex items-start gap-5">
-          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 text-cyan-400">
+      <div className="relative h-full rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-cyan-400/40 hover:shadow-[0_20px_60px_rgba(34,211,238,0.12)] sm:p-6">
+        <div className="flex flex-col gap-4 min-[420px]:flex-row min-[420px]:items-start min-[420px]:gap-5">
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-500/10 to-purple-500/10 text-cyan-400 sm:h-14 sm:w-14">
             <Trophy size={24} />
           </div>
 
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-white transition-colors group-hover:text-cyan-400">
+            <h3 className="text-lg font-bold text-white transition-colors group-hover:text-cyan-400 sm:text-xl">
               {title}
             </h3>
 
@@ -68,15 +68,15 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="relative overflow-hidden bg-[#050816] py-24 px-6"
+      className="relative overflow-hidden bg-[#050816] px-4 py-20 sm:px-6 sm:py-24"
     >
       {/* Background Glow */}
-      <div className="absolute top-20 left-20 h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px]" />
-      <div className="absolute bottom-20 right-20 h-72 w-72 rounded-full bg-purple-500/10 blur-[120px]" />
+      <div className="absolute left-0 top-20 hidden h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px] sm:block" />
+      <div className="absolute bottom-20 right-0 hidden h-72 w-72 rounded-full bg-purple-500/10 blur-[120px] sm:block" />
 
       <div className="relative mx-auto max-w-6xl">
         {/* Header */}
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center sm:mb-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -89,14 +89,14 @@ export default function Achievements() {
             </span>
           </motion.div>
 
-          <h2 className="text-5xl font-black tracking-tight md:text-6xl">
+          <h2 className="text-3xl font-black tracking-tight sm:text-4xl md:text-6xl">
             <span className="text-white">My</span>
             <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
               Achievements
             </span>
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-gray-400">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-400 sm:mt-6 sm:text-base">
             Highlights from my coding journey, academic growth, competitive
             programming, and professional experience.
           </p>
