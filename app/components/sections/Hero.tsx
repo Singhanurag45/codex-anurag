@@ -76,7 +76,7 @@ export default function Hero() {
               </div>
 
               <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5 text-center">
-                <h3 className="text-white text-2xl font-black">15+</h3>
+                <h3 className="text-white text-2xl font-black">20+</h3>
                 <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">
                   Projects
                 </p>

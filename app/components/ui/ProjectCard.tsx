@@ -26,18 +26,15 @@ export default function ProjectCard({
       whileHover={{ y: -10 }}
       className="group relative w-full h-full"
     >
-      {/* Wrapping everything in the anchor tag makes the whole card clickable. 
-        'block' ensures it takes up the full space of the motion div.
-      */}
       <a
         href={source_code_link}
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full h-full no-underline"
       >
-        <div className="bg-[#10153e]/50 backdrop-blur-sm p-5 rounded-[2.5rem] w-full h-full flex flex-col border border-white/5 group-hover:border-[#a285fd]/50 transition-all duration-500 shadow-2xl relative overflow-hidden">
+        <div className="relative flex h-full w-full flex-col overflow-hidden rounded-3xl border border-white/5 bg-[#10153e]/50 p-4 shadow-2xl backdrop-blur-sm transition-all duration-500 group-hover:border-[#a285fd]/50 sm:rounded-[2.5rem] sm:p-5">
           {/* Image Container */}
-          <div className="relative w-full h-56 mb-6 overflow-hidden rounded-[1.8rem] bg-[#050816]">
+          <div className="relative mb-4 h-44 w-full overflow-hidden rounded-2xl bg-[#050816] sm:mb-6 sm:h-56 sm:rounded-[1.8rem]">
             <Image
               src={image}
               alt={name}
@@ -47,31 +44,31 @@ export default function ProjectCard({
             />
 
             {/* Visual indicator for GitHub on hover */}
-            <div className="absolute top-4 right-4 z-20">
-              <div className="w-10 h-10 rounded-full bg-[#050816]/80 backdrop-blur-md flex items-center justify-center border border-white/10 text-white group-hover:bg-[#a285fd] group-hover:border-[#a285fd] transition-all duration-300">
+            <div className="absolute right-3 top-3 z-20 sm:right-4 sm:top-4">
+              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-[#050816]/80 text-white backdrop-blur-md transition-all duration-300 group-hover:border-[#a285fd] group-hover:bg-[#a285fd] sm:h-10 sm:w-10">
                 <Github size={18} />
               </div>
             </div>
 
             {/* Dark gradient overlay that appears on hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#050816]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#050816]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
           {/* Text Content */}
-          <div className="flex-1 flex flex-col px-2">
-            <h3 className="text-white font-black text-2xl mb-3 group-hover:text-[#a285fd] transition-colors tracking-tight">
+          <div className="flex flex-1 flex-col px-1 sm:px-2">
+            <h3 className="mb-2 text-xl font-black tracking-tight text-white transition-colors group-hover:text-[#a285fd] sm:mb-3 sm:text-2xl">
               {name}
             </h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1 line-clamp-3">
+            <p className="mb-5 flex-1 text-sm leading-relaxed text-gray-400 line-clamp-3 sm:mb-6 sm:text-sm">
               {description}
             </p>
 
             {/* Tech Tags */}
-            <div className="flex flex-wrap gap-2 mt-auto">
+            <div className="mt-auto flex flex-wrap gap-2">
               {tags?.map((tag, index) => (
                 <span
                   key={tag.name + index}
-                  className="text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1 rounded-lg bg-[#050816] text-gray-400 border border-white/5 group-hover:border-[#a285fd]/20 transition-colors"
+                  className="rounded-lg border border-white/5 bg-[#050816] px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-400 transition-colors group-hover:border-[#a285fd]/20 sm:px-3"
                 >
                   {tag.name}
                 </span>
@@ -80,7 +77,7 @@ export default function ProjectCard({
           </div>
 
           {/* Subtle Bottom Glow on Hover */}
-          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-2/3 h-8 bg-[#a285fd] opacity-0 group-hover:opacity-10 blur-[40px] transition-all duration-500" />
+          <div className="absolute -bottom-4 left-1/2 h-8 w-2/3 -translate-x-1/2 bg-[#a285fd] opacity-0 blur-2xl transition-all duration-500 group-hover:opacity-10" />
         </div>
       </a>
     </motion.div>
