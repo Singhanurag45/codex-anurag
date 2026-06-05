@@ -8,39 +8,20 @@ import {
   Briefcase,
   CalendarDays,
   MapPin,
-  ArrowUpRight,
-  CheckCircle2,
   Building2,
 } from "lucide-react";
 import SectionWrapper from "../hoc/SectionWrapper";
 
-const contributions = [
-  "Developing the company portfolio using Next.js and TypeScript",
-  "Building reusable and scalable UI components",
-  "Implementing responsive layouts across devices",
-  "Collaborating on feature development and UI improvements",
-  "Optimizing performance and user experience",
-];
-
-const technologies = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "API Integration",
-  "Git",
-];
-
 const Experience = () => {
   return (
-    <section className="relative overflow-hidden bg-[#050816] py-20 sm:py-24">
+    <section className="relative overflow-hidden bg-[#050816] py-16 sm:py-20">
       {/* Background Glow */}
       <div className="absolute left-0 top-20 hidden h-72 w-72 rounded-full bg-cyan-500/10 blur-[120px] sm:block" />
       <div className="absolute bottom-20 right-0 hidden h-72 w-72 rounded-full bg-purple-500/10 blur-[120px] sm:block" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-0">
         {/* Section Header */}
-        <div className="mb-12 text-center sm:mb-20">
+        <div className="mb-10 text-center sm:mb-14">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -61,11 +42,6 @@ const Experience = () => {
               Experience
             </span>
           </h2>
-
-          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-400 sm:mt-6 sm:text-base">
-            Building modern web applications and delivering high-quality
-            digital experiences using cutting-edge technologies.
-          </p>
         </div>
 
         {/* Timeline */}
@@ -86,75 +62,52 @@ const Experience = () => {
             </div>
 
             {/* Experience Card */}
-            <div className="md:ml-20">
-              <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/30 sm:p-8">
+            <div className="mx-auto max-w-3xl md:ml-20">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all duration-500 hover:border-cyan-400/30 sm:p-6">
                 {/* Top Section */}
-                <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-                  <div className="flex flex-col gap-5 min-[520px]:flex-row min-[520px]:items-start">
-                    <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#050816] sm:h-28 sm:w-28">
-                      <Image
-                        src="/companylogo.png"
-                        alt="UrbanSkyMedia"
-                        width={90}
-                        height={90}
-                        className="h-16 w-16 object-contain sm:h-[90px] sm:w-[90px]"
-                      />
-                    </div>
-
-                    <div className="min-w-0">
-                      <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-cyan-400 sm:px-4 sm:text-xs sm:tracking-widest">
-                        Active Internship
-                      </div>
-
-                      <h3 className="mt-4 text-2xl font-black text-white sm:text-3xl">
-                        Full Stack Developer Intern
-                      </h3>
-
-                      <div className="mt-2 flex items-center gap-2 text-base font-semibold text-gray-300 sm:text-lg">
-                        <Building2 size={18} />
-                        UrbanSkyMedia
-                      </div>
-
-                      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-gray-400 sm:text-base">
-                        Contributing to the development of the company portfolio
-                        platform using Next.js, focusing on scalable frontend
-                        architecture, reusable components, responsive design,
-                        and performance optimization.
-                      </p>
-                    </div>
+                <div className="flex flex-col gap-5 min-[520px]:flex-row min-[520px]:items-start">
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#050816] sm:h-20 sm:w-20">
+                    <Image
+                      src="/companylogo.png"
+                      alt="UrbanSkyMedia"
+                      width={64}
+                      height={64}
+                      className="h-12 w-12 object-contain sm:h-16 sm:w-16"
+                    />
                   </div>
 
-                  <a
-                    href="https://urbanskymedia.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 px-6 py-4 font-semibold text-white transition hover:scale-105 sm:w-auto"
-                  >
-                    Visit Company
+                  <div className="min-w-0">
+                    <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/10 px-3 py-2 text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-cyan-400 sm:px-4 sm:text-xs sm:tracking-widest">
+                      Active Internship
+                    </div>
 
-                    <ArrowUpRight
-                      size={18}
-                      className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
-                    />
-                  </a>
+                    <h3 className="mt-4 text-xl font-black text-white sm:text-2xl">
+                      Full Stack Web Developer
+                    </h3>
+
+                    <div className="mt-2 flex items-center gap-2 text-sm font-semibold text-gray-300 sm:text-base">
+                      <Building2 size={18} />
+                      UrbanSkyMedia
+                    </div>
+                  </div>
                 </div>
 
                 {/* Info Cards */}
-                <div className="mt-8 grid gap-4 sm:mt-10 md:grid-cols-3">
-                  <div className="rounded-2xl border border-white/10 bg-[#050816]/50 p-5">
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-2xl border border-white/10 bg-[#050816]/50 p-4">
                     <div className="flex items-center gap-2 text-cyan-400">
                       <CalendarDays size={18} />
                       <span className="text-xs font-bold uppercase tracking-widest">
-                        Duration
+                        Active Internship Duration
                       </span>
                     </div>
 
-                    <p className="mt-3 text-base font-bold text-white sm:text-lg">
+                    <p className="mt-3 text-sm font-bold text-white sm:text-base">
                       May 2026 - Present
                     </p>
                   </div>
 
-                  <div className="rounded-2xl border border-white/10 bg-[#050816]/50 p-5">
+                  <div className="rounded-2xl border border-white/10 bg-[#050816]/50 p-4">
                     <div className="flex items-center gap-2 text-purple-400">
                       <MapPin size={18} />
                       <span className="text-xs font-bold uppercase tracking-widest">
@@ -162,79 +115,9 @@ const Experience = () => {
                       </span>
                     </div>
 
-                    <p className="mt-3 text-base font-bold text-white sm:text-lg">
-                      Hybrid / Remote
+                    <p className="mt-3 text-sm font-bold text-white sm:text-base">
+                      Onsite
                     </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-white/10 bg-[#050816]/50 p-5">
-                    <div className="flex items-center gap-2 text-emerald-400">
-                      <Briefcase size={18} />
-                      <span className="text-xs font-bold uppercase tracking-widest">
-                        Focus Area
-                      </span>
-                    </div>
-
-                    <p className="mt-3 text-base font-bold text-white sm:text-lg">
-                      Portfolio Development
-                    </p>
-                  </div>
-                </div>
-
-                {/* Contributions + Tech Stack */}
-                <div className="mt-8 grid gap-8 sm:mt-10 lg:grid-cols-2">
-                  <div>
-                    <h4 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-white sm:mb-6 sm:text-sm sm:tracking-[0.25em]">
-                      Key Contributions
-                    </h4>
-
-                    <div className="space-y-4">
-                      {contributions.map((item) => (
-                        <div
-                          key={item}
-                          className="flex items-start gap-3"
-                        >
-                          <CheckCircle2
-                            size={18}
-                            className="mt-1 shrink-0 text-cyan-400"
-                          />
-
-                          <p className="text-gray-300">
-                            {item}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-5 text-xs font-bold uppercase tracking-[0.2em] text-white sm:mb-6 sm:text-sm sm:tracking-[0.25em]">
-                      Technologies Used
-                    </h4>
-
-                    <div className="flex flex-wrap gap-3">
-                      {technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-gray-200 transition hover:border-cyan-400/30 hover:text-cyan-400"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="mt-8 rounded-2xl border border-white/10 bg-[#050816]/50 p-5 sm:p-6">
-                      <p className="text-xs font-bold uppercase tracking-[0.25em] text-gray-500">
-                        Internship Summary
-                      </p>
-
-                      <p className="mt-4 leading-relaxed text-gray-300">
-                        Working closely on frontend development, responsive
-                        design implementation, reusable component architecture,
-                        and delivering a polished user experience using modern
-                        React and Next.js best practices.
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -247,4 +130,3 @@ const Experience = () => {
 };
 
 export default SectionWrapper(Experience, "experience");
-;

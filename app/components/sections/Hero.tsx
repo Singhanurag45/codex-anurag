@@ -142,7 +142,7 @@ export default function Hero() {
             transition={{ duration: 0.7 }}
             className="flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-none">
+            <div className="relative w-full max-w-[18rem] sm:max-w-xs lg:max-w-sm">
               {/* Glow */}
               <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-r from-[#a285fd]/20 to-blue-500/20 blur-[80px]" />
 
